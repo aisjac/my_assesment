@@ -1,8 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import '../../model/login_dm.dart';
+import '../../model/login_response.dart';
+import '../../service/auth/auth_service.dart';
 import '../../utils/custom_snackbar.dart';
 import '../../utils/dialog_helper.dart';
 import '../../utils/shared_preference.dart';
+import '../user/user_screen.dart';
 
 class LoginController extends GetxController{
 
