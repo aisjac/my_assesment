@@ -46,16 +46,12 @@ class LoginController extends GetxController{
 
         if (result.code == 200) {
 
-          CustomSnackBar.showCustomSnackBar(message: "${result.userMessage}", title: "Success");
+          // CustomSnackBar.showCustomSnackBar(message: "${result.userMessage}", title: "Success");
 
           // token
           SharedPreferenceUtils.storeUserAccessToken(result.accessToken ?? "");
           print("Token : ${SharedPreferenceUtils.getUserAccessToken()}");
 
-          // String imageUrl = result.data?.imageUrl ?? "";
-
-          // image
-          // SharedPreferenceUtils.storeUserImage(imageUrl);
 
           Get.offAll(() => const UserScreen());
         } else {

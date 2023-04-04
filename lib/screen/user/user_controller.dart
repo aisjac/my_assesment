@@ -18,16 +18,16 @@ class UserController extends GetxController{
 
   Future getUserList() async {
 
-    DialogHelper.showLoading();
     try {
+      DialogHelper.showLoading();
       var response = await UserListService().requestUserList(userType);
 
       if (response != null) {
-        DialogHelper.hideLoading();
-        update();
         var result = UserListResponse.fromJson(response);
         userList = result.data ?? [];
+        DialogHelper.hideLoading();
         update();
+
       }
 
     } catch (exception) {
