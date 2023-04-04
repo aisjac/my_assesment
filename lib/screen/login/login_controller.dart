@@ -64,6 +64,8 @@ class LoginController extends GetxController{
     } catch (exception) {
       DialogHelper.hideLoading();
       print(exception);
+      CustomSnackBar.showCustomErrorSnackBar(
+          title: "Error", message: "Credential didn't matched!");
     }
   }
 
