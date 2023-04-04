@@ -125,14 +125,14 @@ class Department {
   Name? name;
   int? isActive;
   DateTime? createdAt;
-  dynamic updatedAt;
+  DateTime? updatedAt;
 
   factory Department.fromJson(Map<String, dynamic> json) => Department(
     id: json["id"],
     name: nameValues.map[json["name"]]!,
     isActive: json["is_active"],
     createdAt: json["created_at"] == null ? null : DateTime.parse(json["created_at"]),
-    updatedAt: json["updated_at"],
+    updatedAt: json["updated_at"] == null ? null : DateTime.parse(json["updated_at"]),
   );
 
   Map<String, dynamic> toJson() => {
@@ -140,14 +140,15 @@ class Department {
     "name": nameValues.reverse[name],
     "is_active": isActive,
     "created_at": createdAt?.toIso8601String(),
-    "updated_at": updatedAt,
+    "updated_at": updatedAt?.toIso8601String(),
   };
 }
 
-enum Name { CSE }
+enum Name { CSE, TESTER }
 
 final nameValues = EnumValues({
-  "CSE": Name.CSE
+  "CSE": Name.CSE,
+  "tester": Name.TESTER
 });
 
 class LastLoggedInformation {
@@ -294,10 +295,10 @@ class LineManager {
   };
 }
 
-enum UserRole { ADMIN }
+enum UserRole { MANAGER }
 
 final userRoleValues = EnumValues({
-  "Admin": UserRole.ADMIN
+  "Manager": UserRole.MANAGER
 });
 
 class EnumValues<T> {

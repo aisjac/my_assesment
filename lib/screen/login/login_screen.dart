@@ -19,10 +19,21 @@ class LoginScreen extends StatelessWidget {
             backgroundColor: Colors.blueGrey,
             body: Center(
               child: Padding(
-                padding: const EdgeInsets.only(left: 25.0,right: 25.0),
+                padding: const EdgeInsets.only(left: 25.0, right: 25.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    const Padding(
+                      padding: EdgeInsets.all(15.0),
+                      child: Text(
+                        "Login to your account",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                            fontSize: 25),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
                     CustomTextField(
                         hintText: 'Email',
                         controller: controller.emailController),
@@ -30,9 +41,9 @@ class LoginScreen extends StatelessWidget {
                     CustomPasswordTextField(
                         hintText: 'Password',
                         controller: controller.passController),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 25),
                     CustomButton(
-                      text: 'Sign Up',
+                      text: 'Sign In',
                       onTap: () {
                         if (controller.validation()) {
                           controller.submitSignIn();

@@ -5,7 +5,7 @@ import '../../utils/dialog_helper.dart';
 
 class UserController extends GetxController{
 
-  final String userType = "admin";
+  final String userType = "manager";
 
   List<UserListData> userList = [];
 
@@ -18,10 +18,13 @@ class UserController extends GetxController{
 
   Future getUserList() async {
 
+    DialogHelper.showLoading();
     try {
       var response = await UserListService().requestUserList(userType);
 
       if (response != null) {
+        DialogHelper.hideLoading();
+        update();
         var result = UserListResponse.fromJson(response);
         userList = result.data ?? [];
         update();

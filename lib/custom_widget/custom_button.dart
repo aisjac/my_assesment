@@ -28,7 +28,7 @@ class CustomButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
             // minimumSize: Size(minWidth ?? 300, minHeight ?? 50),
             // maximumSize: Size(maxWidth ?? 300, maxHeight ?? 50),
-            backgroundColor: bgColor),
+            backgroundColor: Colors.grey),
         child: SizedBox(
           height: minHeight ?? 50,
           child: Row(

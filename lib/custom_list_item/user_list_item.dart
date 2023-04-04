@@ -14,7 +14,7 @@ class UserListItem extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.grey,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(6),
       ),
       child: Row(
@@ -28,11 +28,15 @@ class UserListItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
             child:  Center(
-                child: CustomNetworkImage(
-                  networkImagePath: "${data?.image}",
-                  placeHolderPath: "assets/images/placeholder.png",
-                  height: 40,
-                  width: 40,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10.0),
+                  child: CustomNetworkImage(
+                    networkImagePath: "${data?.image}",
+                    placeHolderPath: "assets/images/placeholder.png",
+                    height: 50,
+                    width: 50,
+                    fit: BoxFit.fill,
+                  ),
                 )),
           ),
           const SizedBox(height: 15),
@@ -56,9 +60,9 @@ class UserListItem extends StatelessWidget {
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: 8.0),
+                      padding: const EdgeInsets.only(left: 8.0),
                       child: Text(
-                        "${data?.address}" ?? "",
+                        "${data?.email}" ?? "",
                         style: const TextStyle(
                             fontWeight: FontWeight.w400,
                             color: Colors.black,
@@ -67,16 +71,20 @@ class UserListItem extends StatelessWidget {
                     ),
                   ],
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child:  Text(
+                    "${data?.phoneNumber}",
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black,
+                        fontSize: 12),
+                  ),
+                ),
               ],
             ),
           ),
-          Text(
-            "${data?.isApproved}",
-            style: const TextStyle(
-              fontWeight: FontWeight.w400,
-              color: Colors.black,
-            ),
-          ),
+
         ],
       ),
     );
