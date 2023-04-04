@@ -66,7 +66,7 @@ class UserDetailsScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
                     child: Text(
-                      "${data?.email}" ?? "",
+                      data?.email ?? "",
                       style: const TextStyle(
                           fontWeight: FontWeight.w400,
                           color: Colors.grey,
@@ -88,7 +88,7 @@ class UserDetailsScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
                     child: Text(
-                      "${data?.phoneNumber}",
+                      data?.phoneNumber ?? "",
                       style: const TextStyle(
                           fontWeight: FontWeight.w400,
                           color: Colors.grey,
@@ -110,7 +110,7 @@ class UserDetailsScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
                     child: Text(
-                      "${data?.designation}",
+                      data?.designation ?? "",
                       style: const TextStyle(
                           fontWeight: FontWeight.w400,
                           color: Colors.grey,
@@ -131,7 +131,7 @@ class UserDetailsScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
                     child: Text(
-                      "${data?.address}",
+                      data?.address ?? "",
                       style: const TextStyle(
                           fontWeight: FontWeight.w400,
                           color: Colors.grey,
@@ -153,7 +153,7 @@ class UserDetailsScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
                     child: Text(
-                      "${data?.dateOfBirth}",
+                      data?.dateOfBirth ?? "",
                       style: const TextStyle(
                           fontWeight: FontWeight.w400,
                           color: Colors.grey,
