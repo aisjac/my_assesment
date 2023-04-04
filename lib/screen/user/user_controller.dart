@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import '../../model/user_list_response.dart';
+import '../../service/user_list/user_list_service.dart';
 import '../../utils/dialog_helper.dart';
 
 class UserController extends GetxController{

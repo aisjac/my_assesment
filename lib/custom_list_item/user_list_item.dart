@@ -1,8 +1,8 @@
-import 'package:assesment/model/user_list_response.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../custom_widget/custom_network_image.dart';
+import '../model/user_list_response.dart';
 
 class UserListItem extends StatelessWidget {
   final UserListData? data;
